@@ -29,7 +29,7 @@ function playRound(playerChoice, computerChoice) {
                 case "rock":
                     return "You win! Paper beats Rock";
                 case "scissors":
-                    return "You lose! Scissors beats Rock";
+                    return "You lose! Scissors beats Paper";
             }
         case "scissors":
             switch (computerChoice) {
@@ -40,5 +40,13 @@ function playRound(playerChoice, computerChoice) {
             }
         default:
             return undefined;
+    }
+}
+
+function playGame() {
+    while (true) {
+        const computerChoice = getComputerChoice();
+        const playerChoice = prompt("Rock, Paper or Scissors?", "");
+        console.log(playRound(playerChoice, computerChoice));
     }
 }
